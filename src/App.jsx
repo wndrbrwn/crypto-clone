@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import TopBanner from "./components/TopBanner";
 import Header from "./components/Header";
 import SlideBanner from "./components/SlideBanner";
+import KdtSection from "./components/KdtSection";
 
 const App = () => {
   const [isViewed, setIsViewed] = useState(false);
@@ -19,6 +20,7 @@ const App = () => {
       {!isViewed && <TopBanner setIsViewed={setIsViewed} />}
       <Header />
       <SlideBanner />
+      <KdtSection />
     </div>
   );
 };
