@@ -4,7 +4,7 @@ const SlideBannerCard = ({ id, title, description, isWhite }) => {
       <div
         className={`${
           isWhite && "text-white"
-        } container-style flex flex-col justify-center h-full`}
+        } container-style flex flex-col justify-center h-full px-6`}
       >
         <h3 className="text-[32px] font-bold">{title}</h3>
         <h5 className="mt-2">{description}</h5>

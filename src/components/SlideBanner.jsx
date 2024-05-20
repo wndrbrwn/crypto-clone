@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 import SlideBannerCard from "./SlideBannerCard";
 
@@ -50,26 +50,34 @@ const SlideBannerData = [
 ];
 
 const SlideBanner = () => {
+  const [page, setPage] = useState(0);
+
   const sliderRef = useRef();
 
   const onClickNext = () => {
     sliderRef.current.slickNext();
+    getCurrentPage();
   };
 
   const onClickPrev = () => {
     sliderRef.current.slickPrev();
+    getCurrentPage();
   };
 
-  const onClickGoTo = () => {
-    sliderRef.current.slickGoTo(0);
+  const getCurrentPage = () => {
+    setPage(sliderRef.current.innerSlider.state.currentSlide);
   };
 
   useEffect(() => {
-    console.log(sliderRef);
+    const interval = setInterval(() => {
+      getCurrentPage();
+    }, 1000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
-    <div>
+    <div className="relative">
       <Slider
         ref={sliderRef}
         fade={true}
@@ -87,40 +95,42 @@ const SlideBanner = () => {
           />
         ))}
       </Slider>
-      <div className="text-white bg-black bg-opacity-30 flex w-fit text-xs rounded-full gap-2 px-3 py-[5px]">
-        <div>1 / 8</div>
-        <button onClick={onClickPrev}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="h-4 w-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M15 19l-7-7 7-7"
-            ></path>
-          </svg>
-        </button>
-        <button onClick={onClickNext}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="h-4 w-4"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M9 5l7 7-7 7"
-            ></path>
-          </svg>
-        </button>
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 max-w-[1280px] w-full px-6">
+        <div className="text-white bg-black bg-opacity-30 flex w-fit text-xs rounded-full gap-2 px-3 py-[5px]">
+          <div>{page + 1} / 8</div>
+          <button onClick={onClickPrev}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M15 19l-7-7 7-7"
+              ></path>
+            </svg>
+          </button>
+          <button onClick={onClickNext}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="h-4 w-4"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M9 5l7 7-7 7"
+              ></path>
+            </svg>
+          </button>
+        </div>
       </div>
     </div>
   );
