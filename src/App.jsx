@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
-import TopBanner from "./components/TopBanner";
+
 import Header from "./components/Header";
 import SlideBanner from "./components/SlideBanner";
-import KdtSection from "./components/KdtSection";
+
 import ScheduleSection from "./components/ScheduleSection";
-import StripBanner from "./components/StripBanner";
-import OnboardingSection from "./components/OnboardingSection";
-import TrendSection from "./components/TrendSection";
-import EducationSection from "./components/EducationSection";
+
+
 import Footer from "./components/Footer";
 
 const App = () => {
@@ -22,20 +20,23 @@ const App = () => {
   }, []);
 
   return (
-    <div className="font-pretendard text-techit-gray-300">
-      {!isViewed && <TopBanner setIsViewed={setIsViewed} />}
+    <div className="font-pretendard text-crypto-text bg-crypto-main">
+      
       <Header />
       <SlideBanner />
-      <KdtSection />
+      
       <ScheduleSection />
-      <StripBanner />
-      <OnboardingSection />
-      <TrendSection />
-      <EducationSection />
+      
+     
+    
+      <div data-v-54b33430="" class="subscribe">
+  <h2 data-v-54b33430="" id="stayUpdate" class="subscribe-title">Stay Updated</h2>
+   <p data-v-54b33430="" class="text-secondary px-3">Join our mailing list to stay in the loop with our newest feature releases</p> 
+   <div data-v-54b33430="" class="subscribe-container"><div data-v-54b33430="" class="subscribe-container">
+    
+      </div> <button data-v-54b33430="" type="submit" class="subscribe-btn">Subscribe</button></div></div>
       <Footer />
-      <button className="w-[216px] fixed bottom-12 right-4">
-        <img src="/images/ask.png" alt="문의하기" />
-      </button>
+      
     </div>
   );
 };

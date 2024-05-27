@@ -25,9 +25,9 @@ const ClassButton = ({ classData, classCardComps, setClassCardComps }) => {
     <button
       className={`${
         isClicked
-          ? "border-techit-main text-techit-main bg-[#fff7ed]"
-          : "border-techit-gray-100"
-      } px-3 py-2 text-lg border rounded-md`}
+          ? "border-2 border-blue-600 text-white bg-crypto-back"
+          : "border-techit-gray-100 "
+      } px-3 py-1.5 text-lg border border-crypto-back text-white rounded-md`}
       onClick={onClickClass}
     >
       {classData.name}

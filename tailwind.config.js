@@ -3,7 +3,14 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      
+      backgroundImage:{"footer-back": "url('/images/bottom.png')",
+    },
       colors: {
+        "crypto-main": "#0A062F",
+        "crypto-back": "#137499",
+        "crypto-text": "#FFFFFF99",
+
         "techit-main": "#ff7710",
         "techit-gray": {
           50: "#f5f5f5",

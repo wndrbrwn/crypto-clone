@@ -2,8 +2,8 @@ const TitleBar = ({ title, description, isDetail }) => {
   return (
     <div className="h-[64.5px] flex justify-between items-end font-semibold">
       <div className="h-full flex flex-col justify-between">
-        <h5 className="text-techit-main">{title}</h5>
-        <h3 className="text-techit-gray-300 text-[26px]">{description}</h3>
+        <h2 className="text-white text-[32px]">{title}</h2>
+        <h3 className="text-white text-[26px]">{description}</h3>
       </div>
       {isDetail && (
         <button className="flex items-center text-sm">
