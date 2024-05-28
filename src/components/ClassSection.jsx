@@ -9,7 +9,7 @@ const ClassSection = () => {
 
   return (
     <>
-      <div className="border border-techit-gray-100 rounded-lg p-6 flex flex-wrap gap-[10px]">
+      <div className="rounded-lg p-6 flex flex-wrap gap-[10px]">
         {classData.map((v, i) => (
           <ClassButton
             key={i}
@@ -19,18 +19,18 @@ const ClassSection = () => {
           />
         ))}
       </div>
-      <ul className="grid grid-cols-2 gap-6 mt-6">
+      <ul className="grid gap-6 mt-6">
         {classCardComps.map((v, i) => (
           <li
             key={v.name + i}
-            className="border border-techit-gray-100 rounded-lg max-w-[604px] w-full"
+            className="mx-auto bg-indigo-950 rounded-3xl max-w-[1000px] shadow-2xl w-full"
           >
             <ClassCard
               name={v.name}
               description={v.description}
               image={v.image}
-              bgColor={v.bgColor}
-              alarm={v.alarm}
+              
+              
             />
           </li>
         ))}
@@ -40,3 +40,4 @@ const ClassSection = () => {
 };
 
 export default ClassSection;
+

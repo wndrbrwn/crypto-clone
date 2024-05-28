@@ -89,9 +89,9 @@ const SlideBanner = () => {
     <div className="relative">
       <Slider
         ref={sliderRef}
-        fade={true}
         
-        arrows={false}
+        dots={true}
+        arrows={true}
       >
         {SlideBannerData.map((v) => (
           <SlideBannerCard
@@ -103,7 +103,7 @@ const SlideBanner = () => {
           />
         ))}
       </Slider>
-      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 max-w-[1280px] w-full px-6">
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 max-w-[1280px]  px-6">
         <div className="text-white bg-black bg-opacity-30 flex w-fit text-xs rounded-full gap-2 px-3 py-[5px]">
           <div>{page + 1} / 9</div>
           <button onClick={onClickPrev}>

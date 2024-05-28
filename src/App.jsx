@@ -29,12 +29,7 @@ const App = () => {
       
      
     
-      <div data-v-54b33430="" class="subscribe">
-  <h2 data-v-54b33430="" id="stayUpdate" class="subscribe-title">Stay Updated</h2>
-   <p data-v-54b33430="" class="text-secondary px-3">Join our mailing list to stay in the loop with our newest feature releases</p> 
-   <div data-v-54b33430="" class="subscribe-container"><div data-v-54b33430="" class="subscribe-container">
-    
-      </div> <button data-v-54b33430="" type="submit" class="subscribe-btn">Subscribe</button></div></div>
+      
       <Footer />
       
     </div>
